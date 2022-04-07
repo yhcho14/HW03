@@ -1,13 +1,14 @@
 #!/bin/bash
 # 2022-03-31 조용현
 # calculator script
+echo "project management in github"
+
 
 declare -a t
 t=(0 1)
 t[0]=`cat num1.txt`
 t[1]=`cat num2.txt`
 
-#echo "${t[@]}"
 
 if [ -z ${Pa} ]; then
     echo "...none operator parameter..."
