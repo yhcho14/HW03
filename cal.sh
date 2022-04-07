@@ -1,10 +1,13 @@
+#!/bin/bash
 # 2022-03-31 조용현
 # calculator script
 
-#echo ${Pa}
-t1=`cat num1.txt`
-t2=`cat num2.txt`
+declare -a t
+t=(0 1)
+t[0]=`cat num1.txt`
+t[1]=`cat num2.txt`
 
+#echo "${t[@]}"
 
 if [ -z ${Pa} ]; then
     echo "...none operator parameter..."
@@ -34,23 +37,23 @@ fi
 sum=0
 
 if [ $Pa = "add" ]; then
-  sum=$(($t1 + $t2))
+  sum=$((${t[0]} + ${t[1]}))
 fi
 
 if [ $Pa = "sub" ]; then
-  sum=$(($t1 - $t2))
+  sum=$((${t[0]} - ${t[1]}))
 fi
 
 if [ $Pa = "div" ]; then
-  sum=$(($t1 / $t2))
+  sum=$((${t[0]} / ${t[1]}))
 fi
 
 if [ $Pa = "mul" ]; then
-  sum=$(($t1 * $t2))
+  sum=$((${t[0]} * ${t[1]}))
 fi
 
-echo "num1 : $t1"
-echo "num2 : $t2"
+echo "num1 : ${t[0]}"
+echo "num2 : ${t[1]}"
 echo "op : $Pa"
 echo "result : $sum"
 

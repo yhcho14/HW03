@@ -1,3 +1,4 @@
+#!/bin/bash
 # 2022-03-31 조용현
 # main script
 
